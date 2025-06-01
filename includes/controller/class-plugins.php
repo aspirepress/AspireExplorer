@@ -159,8 +159,7 @@ class Plugins extends \AspireExplorer\Model\Singleton {
 		);
 
 		if ( is_wp_error( $api_response ) ) {
-			echo wp_kses_post( wpautop( 'Error fetching plugin information. Please try again later.' ) );
-			return;
+			return wp_kses_post( wpautop( 'Error fetching plugin information. Please try again later.' ) );
 		}
 
 		ob_start();
