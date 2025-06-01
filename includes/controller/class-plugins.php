@@ -122,12 +122,12 @@ class Plugins extends \AspireExplorer\Model\Singleton {
 
 		if ( is_wp_error( $api_response ) ) {
 			echo wp_kses_post( wpautop( 'Error fetching plugins. Please try again later.' ) );
-			return;
+			return ob_get_clean();
 		}
 
 		if ( empty( $api_response->plugins ) ) {
 			echo wp_kses_post( wpautop( 'No plugins found for your search.' ) );
-			return;
+			return ob_get_clean();
 		}
 
 		Utilities::include_file(
