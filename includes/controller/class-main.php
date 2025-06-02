@@ -19,11 +19,19 @@ class Main extends \AspireExplorer\Model\Singleton {
 	}
 
 	public function wp_enqueue_scripts() {
+		wp_enqueue_style( 'dashicons' );
 		wp_enqueue_style(
 			'aspire-explorer-styles',
-			plugin_dir_url( AE_DIR_URL ) . 'assets/css/aspire-explorer.css',
+			AE_DIR_URL . 'assets/css/aspire-explorer.css',
 			[],
 			filemtime( AE_DIR_PATH . '/assets/css/aspire-explorer.css' )
+		);
+		wp_enqueue_script(
+			'aspire-explorer-scripts',
+			AE_DIR_URL . 'assets/js/aspire-explorer.js',
+			[ 'jquery' ],
+			filemtime( AE_DIR_PATH . '/assets/js/aspire-explorer.js' ),
+			true
 		);
 	}
 

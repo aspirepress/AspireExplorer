@@ -38,7 +38,7 @@ add_action(
 	'plugins_loaded',
 	function () {
 		if ( ! defined( 'AE_DIR_URL' ) ) {
-			define( 'AE_DIR_URL', plugin_basename( __FILE__ ) );
+			define( 'AE_DIR_URL', plugin_dir_url( __FILE__ ) );
 		}
 		if ( ! defined( 'AE_DIR_PATH' ) ) {
 			define( 'AE_DIR_PATH', __DIR__ );

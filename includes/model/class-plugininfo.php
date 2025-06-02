@@ -425,10 +425,27 @@ class PluginInfo {
 	/**
 	 * Get estimated active installations.
 	 *
-	 * @return int|null Active install count.
+	 * @param bool $humanize Optional. If true, returns value in K/M/B format. Default false.
+	 * @return int|string|null Active install count or formatted string.
 	 */
-	public function get_active_installs() {
-		return is_numeric( $this->active_installs ) ? (int) $this->active_installs : null;
+	public function get_active_installs( $humanize = true ) {
+		if ( ! is_numeric( $this->active_installs ) ) {
+			return null;
+		}
+		$count = (int) $this->active_installs;
+		if ( ! $humanize ) {
+			return $count;
+		}
+		if ( 1000000000 <= $count ) {
+			return round( $count / 1000000000, 1 ) . 'B';
+		} elseif ( 1000000 <= $count ) {
+			return round( $count / 1000000, 1 ) . 'M';
+		} elseif ( 1000 <= $count ) {
+			return round( $count / 1000 ) . 'K';
+		} elseif ( 100 <= $count ) {
+			return round( $count / 100 ) * 100;
+		}
+		return $count;
 	}
 
 	/**
@@ -443,19 +460,27 @@ class PluginInfo {
 	/**
 	 * Get the last update timestamp.
 	 *
-	 * @return string|null ISO 8601 date or null.
+	 * @param string|null $format Optional. Format string or null for human readable.
+	 * @return string|null Formatted date or null.
 	 */
-	public function get_last_updated() {
-		return is_string( $this->last_updated ) ? trim( $this->last_updated ) : null;
+	public function get_last_updated( $format = null ) {
+		if ( ! is_string( $this->last_updated ) || '' === trim( $this->last_updated ) ) {
+			return null;
+		}
+		return $this->format_date_value( $this->last_updated, $format );
 	}
 
 	/**
 	 * Get the date the plugin was added.
 	 *
-	 * @return string|null Date in Y-m-d format or null.
+	 * @param string|null $format Optional. Format string or null for human readable.
+	 * @return string|null Formatted date or null.
 	 */
-	public function get_added() {
-		return is_string( $this->added ) ? trim( $this->added ) : null;
+	public function get_added( $format = null ) {
+		if ( ! is_string( $this->added ) || '' === trim( $this->added ) ) {
+			return null;
+		}
+		return $this->format_date_value( $this->added, $format );
 	}
 
 	/**
@@ -612,10 +637,14 @@ class PluginInfo {
 	public function get_best_icon() {
 		foreach ( [ 'svg', '2x', '1x' ] as $size ) {
 			$icon = $this->get_icons( $size );
-			return filter_var( $icon, FILTER_VALIDATE_URL ) ?? null;
+			if ( $icon && filter_var( $icon, FILTER_VALIDATE_URL ) ) {
+				return $icon;
+			}
 		}
 		return null;
 	}
+
+
 	// ------------------ SETTERS ------------------
 
 	/**
@@ -890,6 +919,46 @@ class PluginInfo {
 	public function set_icons( $val ) {
 		if ( is_array( $val ) ) {
 			$this->icons = $val;
+		}
+	}
+
+	/*Helper Functions*/
+
+	/**
+	 * Format a date value as human readable or with a custom format.
+	 *
+	 * @param string      $date_str Date string.
+	 * @param string|null $format   Format string or null for human readable.
+	 * @return string|null
+	 */
+	private function format_date_value( $date_str, $format = null ) {
+		$date = strtotime( $date_str );
+		if ( ! $date ) {
+			return null;
+		}
+		if ( ! empty( $format ) ) {
+			return gmdate( $format, $date );
+		}
+		$now  = time();
+		$diff = $now - $date;
+		if ( 0 > $diff ) {
+			return gmdate( 'd-m-Y', $date );
+		}
+		$days = floor( $diff / 86400 );
+		if ( 1 > $days ) {
+			return 'Today';
+		} elseif ( 1 === $days ) {
+			return 'Yesterday';
+		} elseif ( 7 > $days ) {
+			return $days . ' days ago';
+		} elseif ( 30 > $days ) {
+			$weeks = floor( $days / 7 );
+			return $weeks . ' week' . ( 1 < $weeks ? 's' : '' ) . ' ago';
+		} elseif ( 365 > $days ) {
+			$months = floor( $days / 30 );
+			return $months . ' month' . ( 1 < $months ? 's' : '' ) . ' ago';
+		} else {
+			return gmdate( 'd-m-Y', $date );
 		}
 	}
 }
