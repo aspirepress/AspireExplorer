@@ -7,7 +7,7 @@ $plugin_info = $args['plugin_info'] ?? [];
 
 $banner_url = $plugin_info->get_banners( 'high' );
 if ( empty( $banner_url ) ) {
-	$banner_url = AE_DIR_URL . 'assets/images/default-banner.png';
+	$banner_url = AE_DIR_URL . 'assets/images/default-banner.svg';
 }
 
 $sections    = $plugin_info->get_sections();
@@ -35,7 +35,7 @@ if ( isset( $sections['description'] ) ) {
 			<p class="plugin-version">Version: <?php echo esc_html( $plugin_info->get_version() ); ?></p>
 		</div>
 		<div class="entry-download">
-			<a href="<?php echo esc_url( $plugin_info->get_download_link() ); ?>" class="button button-primary" target="_blank" rel="noopener noreferrer">Download</a>
+			<a href="<?php echo esc_url( $plugin_info->get_download_link() ); ?>" class="button button-primary" target="_blank" rel="noopener noreferrer"><span class="dashicons dashicons-download"></span> Download</a>
 		</div>
 	</header>
 	<div class="entry-main">

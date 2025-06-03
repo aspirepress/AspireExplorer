@@ -9,7 +9,7 @@ $plugin_url       = home_url( '/' . $target_page_slug . '/' . $plugin_info->get_
 
 $plugin_icon = $plugin_info->get_best_icon();
 if ( empty( $plugin_icon ) ) {
-	$plugin_icon = AE_DIR_URL . 'assets/images/default-icon.png';
+	$plugin_icon = AE_DIR_URL . 'assets/images/default-icon.svg';
 }
 ?>
 <li class="plugin-card">
