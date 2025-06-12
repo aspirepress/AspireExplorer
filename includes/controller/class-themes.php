@@ -1,15 +1,15 @@
 <?php
 /**
- * Class Plugins
+ * Class Themes
  *
- * The Workflow Controller for the Plugins Section.
+ * The Workflow Controller for the Themes Section.
  */
 
 namespace AspireExplorer\Controller;
 
-class Plugins extends \AspireExplorer\Model\Singleton {
+class Themes extends \AspireExplorer\Model\Singleton {
 	/**
-	 * The page slug where the plugins archive page should appear.
+	 * The page slug where the themes archive page should appear.
 	 */
 	private $target_page_slug;
 
@@ -17,7 +17,7 @@ class Plugins extends \AspireExplorer\Model\Singleton {
 	 * Constructor.
 	 */
 	protected function init() {
-		$this->target_page_slug = 'plugins';
+		$this->target_page_slug = 'themes';
 		add_filter( 'init', [ $this, 'init_permalinks' ] );
 		add_action( 'template_redirect', [ $this, 'template_redirect' ] );
 		add_filter( 'query_vars', [ $this, 'query_vars' ] );
@@ -28,23 +28,23 @@ class Plugins extends \AspireExplorer\Model\Singleton {
 	 * Add rewrite rule
 	 */
 	public function init_permalinks() {
-		add_rewrite_rule( '^plugins/([^/]+)?$', 'index.php?plugin_slug=$matches[1]', 'top' );
+		add_rewrite_rule( '^themes/([^/]+)?$', 'index.php?theme_slug=$matches[1]', 'top' );
 	}
 
 	/**
 	 * Register query var
 	 */
 	public function query_vars( $vars ) {
-		$vars[] = 'plugin_slug';
+		$vars[] = 'theme_slug';
 		return $vars;
 	}
 
-		/**
+	/**
 	 * Handle template redirection
 	 */
 	public function template_redirect() {
-		$plugin_slug = get_query_var( 'plugin_slug' );
-		if ( $plugin_slug ) {
+		$theme_slug = get_query_var( 'theme_slug' );
+		if ( $theme_slug ) {
 			$page = get_page_by_path( $this->target_page_slug );
 			if ( $page ) {
 				$page_query = new \WP_Query(
@@ -59,7 +59,7 @@ class Plugins extends \AspireExplorer\Model\Singleton {
 					$wp_query = $page_query;
 					$post     = $page_query->post;
 					setup_postdata( $post );
-					$GLOBALS['plugin_slug'] = $plugin_slug;
+					$GLOBALS['theme_slug'] = $theme_slug;
 					include get_page_template();
 					exit;
 				}
@@ -67,21 +67,20 @@ class Plugins extends \AspireExplorer\Model\Singleton {
 		}
 	}
 
-
 	/**
-	 *
+	 * Filter the_content for themes page.
 	 */
 	public function the_content( $content ) {
 		if ( ! is_page( $this->target_page_slug ) ) {
 			return $content;
 		}
 
-		if ( ! function_exists( 'plugins_api' ) ) {
-			include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+		if ( ! function_exists( 'themes_api' ) ) {
+			include_once ABSPATH . 'wp-admin/includes/theme.php';
 		}
 
-		if ( isset( $GLOBALS['plugin_slug'] ) ) {
-			return $this->single_the_content( $GLOBALS['plugin_slug'] );
+		if ( isset( $GLOBALS['theme_slug'] ) ) {
+			return $this->single_the_content( $GLOBALS['theme_slug'] );
 		} else {
 			$search_keyword = isset( $_GET['keyword'] ) ? sanitize_text_field( $_GET['keyword'] ) : '';
 			return $this->archive_the_content( $search_keyword );
@@ -89,7 +88,7 @@ class Plugins extends \AspireExplorer\Model\Singleton {
 	}
 
 	/**
-	 * The Archive / Plugin Search page.
+	 * The Archive / Theme Search page.
 	 *
 	 * @return string The content to be displayed.
 	 */
@@ -97,7 +96,7 @@ class Plugins extends \AspireExplorer\Model\Singleton {
 		ob_start();
 
 		Utilities::include_file(
-			'plugins/plugins-search-form.php',
+			'themes/themes-search-form.php',
 			[
 				'target_page_slug' => $this->target_page_slug,
 				'search_keyword'   => $search_keyword,
@@ -115,29 +114,29 @@ class Plugins extends \AspireExplorer\Model\Singleton {
 			$search_args['browse'] = 'popular';
 		}
 
-		$api_response = \plugins_api(
-			'query_plugins',
+		$api_response = \themes_api(
+			'query_themes',
 			$search_args
 		);
 
 		if ( is_wp_error( $api_response ) ) {
-			echo wp_kses_post( wpautop( 'Error fetching plugins. Please try again later.' ) );
+			echo wp_kses_post( wpautop( 'Error fetching themes. Please try again later.' ) );
 			return ob_get_clean();
 		}
 
-		if ( empty( $api_response->plugins ) ) {
-			echo wp_kses_post( wpautop( 'No plugins found for your search.' ) );
+		if ( empty( $api_response->themes ) ) {
+			echo wp_kses_post( wpautop( 'No themes found for your search.' ) );
 			return ob_get_clean();
 		}
 
-		//echo '<pre>'; print_r($api_response->plugins[0]); echo '</pre>';
-		//$plugin_info = new \AspireExplorer\Model\ThemeInfo( $api_response->plugins[0] );
-		//echo '<pre>'; print_r($plugin_info); echo '</pre>';
+		//echo '<pre>'; print_r($api_response->themes[0]); echo '</pre>';
+		//$theme_info = new \AspireExplorer\Model\ThemeInfo( $api_response->themes[0] );
+		//echo '<pre>'; print_r($theme_info); echo '</pre>';
 		Utilities::include_file(
-			'plugins/archive/plugins.php',
+			'themes/archive/themes.php',
 			[
 				'target_page_slug' => $this->target_page_slug,
-				'plugins_result'   => $api_response->plugins,
+				'themes_result'    => $api_response->themes,
 				'current_page'     => $search_args['page'],
 				'total_pages'      => ceil( $api_response->info['results'] / $search_args['per_page'] ),
 			]
@@ -147,33 +146,32 @@ class Plugins extends \AspireExplorer\Model\Singleton {
 	}
 
 	/**
-	 * The indivigual plugin page.
+	 * The individual theme page.
 	 *
 	 * @return string The content to be displayed.
 	 */
-	private function single_the_content( $plugin_slug ) {
+	private function single_the_content( $theme_slug ) {
 
-		$api_response = \plugins_api(
-			'plugin_information',
+		$api_response = \themes_api(
+			'theme_information',
 			[
-				'slug'   => $plugin_slug,
+				'slug'   => $theme_slug,
 				'fields' => 'all',
 			]
 		);
 
 		if ( is_wp_error( $api_response ) ) {
-			return wp_kses_post( wpautop( 'Error fetching plugin information. Please try again later.' ) );
+			return wp_kses_post( wpautop( 'Error fetching theme information. Please try again later.' ) );
 		}
 
 		ob_start();
-
 		//echo '<pre>'; print_r($api_response); echo '</pre>';
-		$plugin_info = new \AspireExplorer\Model\PluginInfo( $api_response );
-		//echo '<pre>'; print_r($plugin_info); echo '</pre>';
+		$theme_info = new \AspireExplorer\Model\ThemeInfo( $api_response );
+		//echo '<pre>'; print_r($theme_info); echo '</pre>';
 		Utilities::include_file(
-			'plugins/single/plugin.php',
+			'themes/single/theme.php',
 			[
-				'plugin_info' => $plugin_info,
+				'theme_info' => $theme_info,
 			]
 		);
 

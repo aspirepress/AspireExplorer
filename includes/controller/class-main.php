@@ -16,6 +16,7 @@ class Main extends \AspireExplorer\Model\Singleton {
 	protected function init() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'wp_enqueue_scripts' ] );
 		Plugins::get_instance();
+		Themes::get_instance();
 	}
 
 	public function wp_enqueue_scripts() {
@@ -40,6 +41,7 @@ class Main extends \AspireExplorer\Model\Singleton {
 	 */
 	public static function on_activate() {
 		Plugins::get_instance();
+		Themes::get_instance();
 		flush_rewrite_rules();
 	}
 

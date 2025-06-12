@@ -1,15 +1,18 @@
-.archive-plugin-card {
+.archive-plugin-card,
+.archive-theme-card {
 	max-width: 1200px !important;
 	margin: 12px auto 0 auto;
 
-	.plugin-results-count {
+	.plugin-results-count,
+	.theme-results-count {
 		font-size: 16px;
 		line-height: 1.5;
 		color: #555;
 		margin-bottom: 16px;
 	}
 
-	.plugin-results {
+	.plugin-results,
+	.theme-results {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 32px;
@@ -19,7 +22,8 @@
 		margin: 0;
 		padding: 0;
 
-		.plugin-card {
+		.plugin-card,
+		.theme-card {
 			background: #fff;
 			border: 1.5px solid #e3e6ea;
 			border-radius: 12px;
@@ -43,6 +47,23 @@
 				border-top: 4px solid #005177;
 			}
 
+			.theme-banner {
+				margin: -32px -24px 10px -24px;
+				background: #f8f9fa;
+				border-top-left-radius: 9px;
+				border-top-right-radius: 9px;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					height: auto;
+					border-radius: 8px;
+					box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+					object-fit: cover;
+					aspect-ratio: 1.33 / 1;
+				}
+			}
+
 			header {
 				display: flex;
 				gap: 24px;
@@ -56,7 +77,8 @@
 					align-items: center;
 					justify-content: center;
 
-					.plugin-icon {
+					.plugin-icon,
+					.theme-icon {
 						width: 96px;
 						height: 96px;
 						border-radius: 8px;
@@ -69,7 +91,8 @@
 				.entry-title {
 					flex: 1;
 
-					.plugin-title {
+					.plugin-title,
+					.theme-title {
 						font-size: 1.35em;
 						font-weight: 700;
 						color: #182b49;
@@ -87,7 +110,9 @@
 					}
 
 					.plugin-author,
-					.plugin-version {
+					.plugin-version,
+					.theme-author,
+					.theme-version {
 						font-size: 1em;
 						color: #666;
 						margin: 0 0 4px 0;
@@ -169,14 +194,16 @@
 					flex-basis: 100%;
 					margin: 8px 0 0 0;
 
-					ul.plugin-tags {
+					ul.plugin-tags,
+					ul.theme-tags {
 						display: flex;
 						gap: 8px;
 						margin: 0;
 						padding: 0;
 						list-style: none;
 
-						.plugin-tag {
+						.plugin-tag,
+						.theme-tag {
 							font-size: 0.85em;
 							padding: 3px 9px 4px;
 							border-radius: 4px;
@@ -251,16 +278,19 @@
 	}
 
 	@media (max-width: 1200px) {
-		.plugin-results {
+		.plugin-results,
+		.theme-results {
 			gap: 18px;
 		}
 	}
 
 	@media (max-width: 992px) {
-		.plugin-results {
+		.plugin-results,
+		.theme-results {
 			gap: 20px;
 
-			.plugin-card {
+			.plugin-card,
+			.theme-card {
 				width: 100%;
 				padding: 22px 12px 10px;
 			}
@@ -270,10 +300,12 @@
 	@media (max-width: 768px) {
 		padding: 16px 2vw 8px 2vw;
 
-		.plugin-results {
+		.plugin-results,
+		.theme-results {
 			gap: 10px;
 
-			.plugin-card {
+			.plugin-card,
+			.theme-card {
 				width: 100%;
 				padding: 12px 6px 6px;
 
@@ -290,10 +322,12 @@
 						line-height: 16px;
 					}
 
-					.plugin-tags {
+					.plugin-tags,
+					.theme-tags {
 						gap: 4px;
 
-						.plugin-tag {
+						.plugin-tag,
+						.theme-tag {
 							font-size: 11px;
 							padding: 2px 7px 3px;
 						}
@@ -306,10 +340,12 @@
 	@media (max-width: 576px) {
 		padding: 0 1vw;
 
-		.plugin-results {
+		.plugin-results,
+		.theme-results {
 			gap: 4px;
 
-			.plugin-card {
+			.plugin-card,
+			.theme-card {
 				padding: 7px 2px 4px;
 
 				.entry-excerpt {
@@ -323,10 +359,12 @@
 						line-height: 14px;
 					}
 
-					.plugin-tags {
+					.plugin-tags,
+					.theme-tags {
 						gap: 2px;
 
-						.plugin-tag {
+						.plugin-tag,
+						.theme-tag {
 							font-size: 10px;
 							padding: 1px 5px 2px;
 						}

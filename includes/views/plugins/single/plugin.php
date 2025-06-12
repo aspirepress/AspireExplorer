@@ -31,7 +31,7 @@ if ( isset( $sections['description'] ) ) {
 	<header class="entry-header">
 		<div class="entry-title">
 			<h3 class="plugin-title"><?php echo esc_html( $plugin_info->get_name() ); ?></h3>
-			<p class="plugin-author">by <?php echo esc_html( $plugin_info->get_author() ); ?></p>
+			<p class="plugin-author">by <?php echo esc_html( $plugin_info->get_author( 'display_name' ) ); ?></p>
 			<p class="plugin-version">Version: <?php echo esc_html( $plugin_info->get_version() ); ?></p>
 		</div>
 		<div class="entry-download">
@@ -98,7 +98,7 @@ if ( isset( $sections['description'] ) ) {
 				}
 				?>
 			</ul>
-			<div class="plugin-ratings">
+			<div class="ratings">
 				<?php
 				$total   = 0;
 				$sum     = 0;
@@ -109,19 +109,19 @@ if ( isset( $sections['description'] ) ) {
 				}
 				$average = $total > 0 ? round( $sum / $total, 1 ) : 0;
 				?>
-				<div class="plugin-rating-summary">
+				<div class="rating-summary">
 					<strong><span class="screen-reader-text"><?php echo esc_html__( 'Average rating:', 'aspireexplorer' ); ?></span><?php echo esc_html( $average ); ?> <?php echo esc_html__( 'out of 5 stars.', 'aspireexplorer' ); ?></strong>
 				</div>
-				<ul class="plugin-ratings-list">
+				<ul class="ratings-list">
 					<?php
 					for ( $i = 5; $i >= 1; $i-- ) {
 						$count = isset( $ratings[ $i ] ) ? (int) $ratings[ $i ] : 0;
-						echo '<li class="plugin-rating-row">';
+						echo '<li class="rating-row">';
 						for ( $j = 1; $j <= 5; $j++ ) {
 							echo '<span class="dashicons dashicons-star' . ( $j <= $i ? '-filled' : '-empty' ) . '" aria-hidden="true"></span>';
 						}
-						echo '<span class="plugin-rating-bar"><span class="plugin-rating-bar-inner" style="width:' . ( $total > 0 ? esc_attr( round( ( $count / $total ) * 100 ) ) : 0 ) . '%"></span></span>';
-						echo '<span class="plugin-rating-absolute"><span class="screen-reader-text">' . esc_html__( 'Number of ratings:', 'aspireexplorer' ) . ' </span>' . esc_html( $count ) . ' ' . esc_html__( 'ratings', 'aspireexplorer' ) . '</span>';
+						echo '<span class="rating-bar"><span class="rating-bar-inner" style="width:' . ( $total > 0 ? esc_attr( round( ( $count / $total ) * 100 ) ) : 0 ) . '%"></span></span>';
+						echo '<span class="rating-absolute"><span class="screen-reader-text">' . esc_html__( 'Number of ratings:', 'aspireexplorer' ) . ' </span>' . esc_html( $count ) . ' ' . esc_html__( 'ratings', 'aspireexplorer' ) . '</span>';
 						echo '</li>';
 					}
 					?>

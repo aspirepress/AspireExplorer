@@ -38,7 +38,7 @@ $total_pages      = $args['total_pages'] ?? 1;
 		foreach ( $plugins_result as $plugin_result ) {
 			$plugin_info = new \AspireExplorer\Model\PluginInfo( $plugin_result );
 			\AspireExplorer\Controller\Utilities::include_file(
-				'archive/plugin.php',
+				'plugins/archive/plugin.php',
 				[
 					'target_page_slug' => $target_page_slug,
 					'plugin_info'      => $plugin_info,
