@@ -145,6 +145,15 @@ if ( isset( $sections['description'] ) ) {
 					?>
 				</ul>
 			</div>
+			<div class="entry-tags">
+				<ul class="theme-tags">
+					<?php
+					foreach ( $theme_info->get_tags() as $theme_tag ) {
+						echo '<li class="theme-tag"><span class="screen-reader-text">' . esc_html__( 'Tag:', 'aspireexplorer' ) . ' </span><span aria-label="' . esc_attr__( 'Tag', 'aspireexplorer' ) . ': ' . esc_attr( $theme_tag ) . '">' . esc_html( $theme_tag ) . '</span></li>';
+					}
+					?>
+				</ul>
+			</div>
 		</sidebar>
 	</div>
 </main>

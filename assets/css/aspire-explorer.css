@@ -1551,6 +1551,43 @@
   color: #666;
   white-space: nowrap;
 }
+.single-plugin-card .entry-main sidebar .entry-tags,
+.single-theme-card .entry-main sidebar .entry-tags {
+  margin-bottom: 32px;
+}
+.single-plugin-card .entry-main sidebar .entry-tags ul.plugin-tags,
+.single-plugin-card .entry-main sidebar .entry-tags ul.theme-tags,
+.single-theme-card .entry-main sidebar .entry-tags ul.plugin-tags,
+.single-theme-card .entry-main sidebar .entry-tags ul.theme-tags {
+  display: flex;
+  flex-flow: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.single-plugin-card .entry-main sidebar .entry-tags ul.plugin-tags .plugin-tag,
+.single-plugin-card .entry-main sidebar .entry-tags ul.plugin-tags .theme-tag,
+.single-plugin-card .entry-main sidebar .entry-tags ul.theme-tags .plugin-tag,
+.single-plugin-card .entry-main sidebar .entry-tags ul.theme-tags .theme-tag,
+.single-theme-card .entry-main sidebar .entry-tags ul.plugin-tags .plugin-tag,
+.single-theme-card .entry-main sidebar .entry-tags ul.plugin-tags .theme-tag,
+.single-theme-card .entry-main sidebar .entry-tags ul.theme-tags .plugin-tag,
+.single-theme-card .entry-main sidebar .entry-tags ul.theme-tags .theme-tag {
+  font-size: 0.85em;
+  padding: 3px 9px 4px;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 1px 4px rgba(110, 185, 227, 0.1);
+  border: 1.5px solid #e3e6ea;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  /*&:hover {
+  	background: #6eb9e3;
+  	color: #fff;
+  	border-color: #6eb9e3;
+  }*/
+}
 @media (max-width: 992px) {
   .single-plugin-card,
   .single-theme-card {
