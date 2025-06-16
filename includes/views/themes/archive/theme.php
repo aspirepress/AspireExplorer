@@ -62,6 +62,21 @@ if ( empty( $theme_screenshot ) ) {
 	</div>
 	<footer>
 		<div class="active-installs"></div>
+		<p class="entry-preview">
+			<?php
+			$theme_slug  = $theme_info->get_slug();
+			$preview_url = '';
+			if ( $theme_slug ) {
+				$theme_zip_url = $theme_info->get_download_link();
+				$blueprint_url = AE_DIR_URL . 'includes/views/playground/blueprint.php?theme=' . $theme_zip_url;
+				$cache_buster  = time();
+				$preview_url   = 'https://playground.wordpress.net/?blueprint-url=' . rawurlencode( $blueprint_url ) . '&random=' . $cache_buster;
+			}
+			?>
+			<a href="<?php echo esc_url( $preview_url ); ?>" class="button button-primary" target="_blank" rel="noopener noreferrer">
+				<span class="dashicons dashicons-visibility"></span> <?php esc_html_e( 'Preview', 'aspireexplorer' ); ?>
+			</a>
+		</p>
 		<p class="entry-download">
 			<a href="<?php echo esc_url( $theme_info->get_download_link() ); ?>"
 				class="button button-primary"

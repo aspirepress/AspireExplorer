@@ -383,24 +383,40 @@
   display: flex;
   align-items: center;
 }
+.archive-plugin-card .plugin-results .plugin-card footer .entry-preview,
 .archive-plugin-card .plugin-results .plugin-card footer .entry-download,
+.archive-plugin-card .plugin-results .theme-card footer .entry-preview,
 .archive-plugin-card .plugin-results .theme-card footer .entry-download,
+.archive-plugin-card .theme-results .plugin-card footer .entry-preview,
 .archive-plugin-card .theme-results .plugin-card footer .entry-download,
+.archive-plugin-card .theme-results .theme-card footer .entry-preview,
 .archive-plugin-card .theme-results .theme-card footer .entry-download,
+.archive-theme-card .plugin-results .plugin-card footer .entry-preview,
 .archive-theme-card .plugin-results .plugin-card footer .entry-download,
+.archive-theme-card .plugin-results .theme-card footer .entry-preview,
 .archive-theme-card .plugin-results .theme-card footer .entry-download,
+.archive-theme-card .theme-results .plugin-card footer .entry-preview,
 .archive-theme-card .theme-results .plugin-card footer .entry-download,
+.archive-theme-card .theme-results .theme-card footer .entry-preview,
 .archive-theme-card .theme-results .theme-card footer .entry-download {
   margin: 0;
 }
-.archive-plugin-card .plugin-results .plugin-card footer .entry-download .button,
-.archive-plugin-card .plugin-results .theme-card footer .entry-download .button,
-.archive-plugin-card .theme-results .plugin-card footer .entry-download .button,
-.archive-plugin-card .theme-results .theme-card footer .entry-download .button,
-.archive-theme-card .plugin-results .plugin-card footer .entry-download .button,
-.archive-theme-card .plugin-results .theme-card footer .entry-download .button,
-.archive-theme-card .theme-results .plugin-card footer .entry-download .button,
-.archive-theme-card .theme-results .theme-card footer .entry-download .button {
+.archive-plugin-card .plugin-results .plugin-card footer .entry-preview a.button,
+.archive-plugin-card .plugin-results .plugin-card footer .entry-download a.button,
+.archive-plugin-card .plugin-results .theme-card footer .entry-preview a.button,
+.archive-plugin-card .plugin-results .theme-card footer .entry-download a.button,
+.archive-plugin-card .theme-results .plugin-card footer .entry-preview a.button,
+.archive-plugin-card .theme-results .plugin-card footer .entry-download a.button,
+.archive-plugin-card .theme-results .theme-card footer .entry-preview a.button,
+.archive-plugin-card .theme-results .theme-card footer .entry-download a.button,
+.archive-theme-card .plugin-results .plugin-card footer .entry-preview a.button,
+.archive-theme-card .plugin-results .plugin-card footer .entry-download a.button,
+.archive-theme-card .plugin-results .theme-card footer .entry-preview a.button,
+.archive-theme-card .plugin-results .theme-card footer .entry-download a.button,
+.archive-theme-card .theme-results .plugin-card footer .entry-preview a.button,
+.archive-theme-card .theme-results .plugin-card footer .entry-download a.button,
+.archive-theme-card .theme-results .theme-card footer .entry-preview a.button,
+.archive-theme-card .theme-results .theme-card footer .entry-download a.button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -416,27 +432,79 @@
   text-decoration: none;
   line-height: 1.2;
 }
-.archive-plugin-card .plugin-results .plugin-card footer .entry-download .button .dashicons,
-.archive-plugin-card .plugin-results .theme-card footer .entry-download .button .dashicons,
-.archive-plugin-card .theme-results .plugin-card footer .entry-download .button .dashicons,
-.archive-plugin-card .theme-results .theme-card footer .entry-download .button .dashicons,
-.archive-theme-card .plugin-results .plugin-card footer .entry-download .button .dashicons,
-.archive-theme-card .plugin-results .theme-card footer .entry-download .button .dashicons,
-.archive-theme-card .theme-results .plugin-card footer .entry-download .button .dashicons,
-.archive-theme-card .theme-results .theme-card footer .entry-download .button .dashicons {
+.archive-plugin-card .plugin-results .plugin-card footer .entry-preview a.button .dashicons,
+.archive-plugin-card .plugin-results .plugin-card footer .entry-download a.button .dashicons,
+.archive-plugin-card .plugin-results .theme-card footer .entry-preview a.button .dashicons,
+.archive-plugin-card .plugin-results .theme-card footer .entry-download a.button .dashicons,
+.archive-plugin-card .theme-results .plugin-card footer .entry-preview a.button .dashicons,
+.archive-plugin-card .theme-results .plugin-card footer .entry-download a.button .dashicons,
+.archive-plugin-card .theme-results .theme-card footer .entry-preview a.button .dashicons,
+.archive-plugin-card .theme-results .theme-card footer .entry-download a.button .dashicons,
+.archive-theme-card .plugin-results .plugin-card footer .entry-preview a.button .dashicons,
+.archive-theme-card .plugin-results .plugin-card footer .entry-download a.button .dashicons,
+.archive-theme-card .plugin-results .theme-card footer .entry-preview a.button .dashicons,
+.archive-theme-card .plugin-results .theme-card footer .entry-download a.button .dashicons,
+.archive-theme-card .theme-results .plugin-card footer .entry-preview a.button .dashicons,
+.archive-theme-card .theme-results .plugin-card footer .entry-download a.button .dashicons,
+.archive-theme-card .theme-results .theme-card footer .entry-preview a.button .dashicons,
+.archive-theme-card .theme-results .theme-card footer .entry-download a.button .dashicons {
   font-size: 1.2em;
   margin-right: 4px;
 }
-.archive-plugin-card .plugin-results .plugin-card footer .entry-download .button:hover,
-.archive-plugin-card .plugin-results .theme-card footer .entry-download .button:hover,
-.archive-plugin-card .theme-results .plugin-card footer .entry-download .button:hover,
-.archive-plugin-card .theme-results .theme-card footer .entry-download .button:hover,
-.archive-theme-card .plugin-results .plugin-card footer .entry-download .button:hover,
-.archive-theme-card .plugin-results .theme-card footer .entry-download .button:hover,
-.archive-theme-card .theme-results .plugin-card footer .entry-download .button:hover,
-.archive-theme-card .theme-results .theme-card footer .entry-download .button:hover {
+.archive-plugin-card .plugin-results .plugin-card footer .entry-preview a.button:hover,
+.archive-plugin-card .plugin-results .plugin-card footer .entry-download a.button:hover,
+.archive-plugin-card .plugin-results .theme-card footer .entry-preview a.button:hover,
+.archive-plugin-card .plugin-results .theme-card footer .entry-download a.button:hover,
+.archive-plugin-card .theme-results .plugin-card footer .entry-preview a.button:hover,
+.archive-plugin-card .theme-results .plugin-card footer .entry-download a.button:hover,
+.archive-plugin-card .theme-results .theme-card footer .entry-preview a.button:hover,
+.archive-plugin-card .theme-results .theme-card footer .entry-download a.button:hover,
+.archive-theme-card .plugin-results .plugin-card footer .entry-preview a.button:hover,
+.archive-theme-card .plugin-results .plugin-card footer .entry-download a.button:hover,
+.archive-theme-card .plugin-results .theme-card footer .entry-preview a.button:hover,
+.archive-theme-card .plugin-results .theme-card footer .entry-download a.button:hover,
+.archive-theme-card .theme-results .plugin-card footer .entry-preview a.button:hover,
+.archive-theme-card .theme-results .plugin-card footer .entry-download a.button:hover,
+.archive-theme-card .theme-results .theme-card footer .entry-preview a.button:hover,
+.archive-theme-card .theme-results .theme-card footer .entry-download a.button:hover {
   background: #005177;
   color: #fff;
+}
+.archive-plugin-card .plugin-results .plugin-card footer .entry-preview.entry-preview a.button,
+.archive-plugin-card .plugin-results .plugin-card footer .entry-download.entry-preview a.button,
+.archive-plugin-card .plugin-results .theme-card footer .entry-preview.entry-preview a.button,
+.archive-plugin-card .plugin-results .theme-card footer .entry-download.entry-preview a.button,
+.archive-plugin-card .theme-results .plugin-card footer .entry-preview.entry-preview a.button,
+.archive-plugin-card .theme-results .plugin-card footer .entry-download.entry-preview a.button,
+.archive-plugin-card .theme-results .theme-card footer .entry-preview.entry-preview a.button,
+.archive-plugin-card .theme-results .theme-card footer .entry-download.entry-preview a.button,
+.archive-theme-card .plugin-results .plugin-card footer .entry-preview.entry-preview a.button,
+.archive-theme-card .plugin-results .plugin-card footer .entry-download.entry-preview a.button,
+.archive-theme-card .plugin-results .theme-card footer .entry-preview.entry-preview a.button,
+.archive-theme-card .plugin-results .theme-card footer .entry-download.entry-preview a.button,
+.archive-theme-card .theme-results .plugin-card footer .entry-preview.entry-preview a.button,
+.archive-theme-card .theme-results .plugin-card footer .entry-download.entry-preview a.button,
+.archive-theme-card .theme-results .theme-card footer .entry-preview.entry-preview a.button,
+.archive-theme-card .theme-results .theme-card footer .entry-download.entry-preview a.button {
+  background-color: #6eb9e3;
+}
+.archive-plugin-card .plugin-results .plugin-card footer .entry-preview.entry-preview a.button:hover,
+.archive-plugin-card .plugin-results .plugin-card footer .entry-download.entry-preview a.button:hover,
+.archive-plugin-card .plugin-results .theme-card footer .entry-preview.entry-preview a.button:hover,
+.archive-plugin-card .plugin-results .theme-card footer .entry-download.entry-preview a.button:hover,
+.archive-plugin-card .theme-results .plugin-card footer .entry-preview.entry-preview a.button:hover,
+.archive-plugin-card .theme-results .plugin-card footer .entry-download.entry-preview a.button:hover,
+.archive-plugin-card .theme-results .theme-card footer .entry-preview.entry-preview a.button:hover,
+.archive-plugin-card .theme-results .theme-card footer .entry-download.entry-preview a.button:hover,
+.archive-theme-card .plugin-results .plugin-card footer .entry-preview.entry-preview a.button:hover,
+.archive-theme-card .plugin-results .plugin-card footer .entry-download.entry-preview a.button:hover,
+.archive-theme-card .plugin-results .theme-card footer .entry-preview.entry-preview a.button:hover,
+.archive-theme-card .plugin-results .theme-card footer .entry-download.entry-preview a.button:hover,
+.archive-theme-card .theme-results .plugin-card footer .entry-preview.entry-preview a.button:hover,
+.archive-theme-card .theme-results .plugin-card footer .entry-download.entry-preview a.button:hover,
+.archive-theme-card .theme-results .theme-card footer .entry-preview.entry-preview a.button:hover,
+.archive-theme-card .theme-results .theme-card footer .entry-download.entry-preview a.button:hover {
+  background-color: #4fa3d1;
 }
 .archive-plugin-card .plugin-results .plugin-card footer .entry-tags,
 .archive-plugin-card .plugin-results .theme-card footer .entry-tags,
@@ -516,6 +584,16 @@
   	color: #fff;
   	border-color: #6eb9e3;
   }*/
+}
+.archive-plugin-card .plugin-results .plugin-card.theme-card footer,
+.archive-plugin-card .plugin-results .theme-card.theme-card footer,
+.archive-plugin-card .theme-results .plugin-card.theme-card footer,
+.archive-plugin-card .theme-results .theme-card.theme-card footer,
+.archive-theme-card .plugin-results .plugin-card.theme-card footer,
+.archive-theme-card .plugin-results .theme-card.theme-card footer,
+.archive-theme-card .theme-results .plugin-card.theme-card footer,
+.archive-theme-card .theme-results .theme-card.theme-card footer {
+  justify-content: right;
 }
 .archive-plugin-card .pagination-wrapper,
 .archive-theme-card .pagination-wrapper {
@@ -886,11 +964,15 @@
   font-size: 18px;
   line-height: 20px;
 }
+.single-plugin-card header .entry-preview,
 .single-plugin-card header .entry-download,
+.single-theme-card header .entry-preview,
 .single-theme-card header .entry-download {
   width: 140px;
 }
+.single-plugin-card header .entry-preview a.button,
 .single-plugin-card header .entry-download a.button,
+.single-theme-card header .entry-preview a.button,
 .single-theme-card header .entry-download a.button {
   width: 100%;
   padding: 10px;
@@ -907,14 +989,30 @@
   display: inline-block;
   box-sizing: border-box;
 }
+.single-plugin-card header .entry-preview a.button .dashicons,
 .single-plugin-card header .entry-download a.button .dashicons,
+.single-theme-card header .entry-preview a.button .dashicons,
 .single-theme-card header .entry-download a.button .dashicons {
   font-size: 1.2em;
   margin-right: 4px;
 }
+.single-plugin-card header .entry-preview a.button:hover,
 .single-plugin-card header .entry-download a.button:hover,
+.single-theme-card header .entry-preview a.button:hover,
 .single-theme-card header .entry-download a.button:hover {
   background-color: #005177;
+}
+.single-plugin-card header .entry-preview.entry-preview a.button,
+.single-plugin-card header .entry-download.entry-preview a.button,
+.single-theme-card header .entry-preview.entry-preview a.button,
+.single-theme-card header .entry-download.entry-preview a.button {
+  background-color: #6eb9e3;
+}
+.single-plugin-card header .entry-preview.entry-preview a.button:hover,
+.single-plugin-card header .entry-download.entry-preview a.button:hover,
+.single-theme-card header .entry-preview.entry-preview a.button:hover,
+.single-theme-card header .entry-download.entry-preview a.button:hover {
+  background-color: #4fa3d1;
 }
 .single-plugin-card .entry-main,
 .single-theme-card .entry-main {

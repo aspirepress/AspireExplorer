@@ -40,6 +40,21 @@ if ( isset( $sections['description'] ) ) {
 			<p class="theme-author">by <?php echo esc_html( $theme_info->get_author( 'display_name' ) ); ?></p>
 			<p class="theme-version">Version: <?php echo esc_html( $theme_info->get_version() ); ?></p>
 		</div>
+		<div class="entry-preview">
+			<?php
+			$theme_slug  = $theme_info->get_slug();
+			$preview_url = '';
+			if ( $theme_slug ) {
+				$theme_zip_url = $theme_info->get_download_link();
+				$blueprint_url = AE_DIR_URL . 'includes/views/playground/blueprint.php?theme=' . $theme_zip_url;
+				$cache_buster  = time();
+				$preview_url   = 'https://playground.wordpress.net/?blueprint-url=' . rawurlencode( $blueprint_url ) . '&random=' . $cache_buster;
+			}
+			?>
+			<a href="<?php echo esc_url( $preview_url ); ?>" class="button button-primary" target="_blank" rel="noopener noreferrer">
+				<span class="dashicons dashicons-visibility"></span> <?php esc_html_e( 'Preview', 'aspireexplorer' ); ?>
+			</a>
+		</div>
 		<div class="entry-download">
 			<a href="<?php echo esc_url( $theme_info->get_download_link() ); ?>" class="button button-primary" target="_blank" rel="noopener noreferrer"><span class="dashicons dashicons-download"></span> <?php esc_html_e( 'Download', 'aspireexplorer' ); ?></a>
 		</div>

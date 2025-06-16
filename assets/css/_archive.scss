@@ -159,10 +159,11 @@
 					}
 				}
 
+				.entry-preview,
 				.entry-download {
 					margin: 0;
 
-					.button {
+					a.button {
 						display: inline-flex;
 						align-items: center;
 						gap: 6px;
@@ -186,6 +187,15 @@
 						&:hover {
 							background: #005177;
 							color: #fff;
+						}
+					}
+
+					&.entry-preview {
+						a.button {
+							background-color: #6eb9e3;
+							&:hover {
+								background-color: #4fa3d1;
+							}
 						}
 					}
 				}
@@ -223,6 +233,12 @@
 							}*/
 						}
 					}
+				}
+			}
+
+			&.theme-card {
+				footer {
+					justify-content: right;
 				}
 			}
 		}

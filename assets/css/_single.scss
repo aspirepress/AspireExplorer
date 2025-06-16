@@ -71,8 +71,10 @@
 			}
 		}
 
+		.entry-preview,
 		.entry-download {
 			width: 140px;
+
 			a.button {
 				width: 100%;
 				padding: 10px;
@@ -96,6 +98,15 @@
 
 				&:hover {
 					background-color: #005177;
+				}
+			}
+
+			&.entry-preview {
+				a.button {
+					background-color: #6eb9e3;
+					&:hover {
+						background-color: #4fa3d1;
+					}
 				}
 			}
 		}
