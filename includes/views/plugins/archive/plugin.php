@@ -78,7 +78,6 @@ if ( $plugin_info->is_fair_plugin() ) {
 				rel="noopener noreferrer"
 				aria-label="<?php esc_attr_e( 'Download', 'aspireexplorer' ); ?> <?php echo esc_attr( $plugin_info->get_name() ); ?> <?php esc_attr_e( 'plugin', 'aspireexplorer' ); ?>">
 				<span class="dashicons dashicons-download" aria-hidden="true"></span>
-				<span class="screen-reader-text"><?php esc_html_e( 'Download', 'aspireexplorer' ); ?></span>
 				<?php esc_html_e( 'Download', 'aspireexplorer' ); ?>
 			</a>
 		</p>
