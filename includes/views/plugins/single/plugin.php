@@ -88,7 +88,7 @@ if ( $plugin_info->is_fair_plugin() ) {
 			}
 			?>
 		</article>
-		<sidebar>
+		<aside aria-label="<?php esc_attr_e( 'Plugin Metadata', 'aspireexplorer' ); ?>">
 			<ul>
 				<?php
 				if ( $plugin_info->is_fair_plugin() ) {
@@ -145,6 +145,6 @@ if ( $plugin_info->is_fair_plugin() ) {
 					?>
 				</ul>
 			</div>
-		</sidebar>
+		</aside>
 	</div>
 </main>
