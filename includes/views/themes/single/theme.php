@@ -112,7 +112,7 @@ if ( isset( $sections['description'] ) ) {
 						$value = implode( ', ', $value );
 					}
 					$label = esc_html( $key );
-					echo '<li class="theme-meta-item"><strong><span class="screen-reader-text">' . sprintf( esc_html__( '%s:', 'aspireexplorer' ), $label ) . '</span>' . $label . ':</strong> ' . esc_html( $value ) . '</li>';
+					echo '<li class="theme-meta-item"><strong>' . $label . ':</strong> ' . esc_html( $value ) . '</li>';
 				}
 				?>
 			</ul>
@@ -149,7 +149,7 @@ if ( isset( $sections['description'] ) ) {
 				<ul class="theme-tags">
 					<?php
 					foreach ( $theme_info->get_tags() as $theme_tag ) {
-						echo '<li class="theme-tag"><span class="screen-reader-text">' . esc_html__( 'Tag:', 'aspireexplorer' ) . ' </span><span aria-label="' . esc_attr__( 'Tag', 'aspireexplorer' ) . ': ' . esc_attr( $theme_tag ) . '">' . esc_html( $theme_tag ) . '</span></li>';
+						echo '<li class="theme-tag"><span class="screen-reader-text">' . esc_html__( 'Tag:', 'aspireexplorer' ) . ' </span>' . esc_html( $theme_tag ) . '</li>';
 					}
 					?>
 				</ul>
