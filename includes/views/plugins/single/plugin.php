@@ -92,7 +92,7 @@ if ( $plugin_info->is_fair_plugin() ) {
 			<ul>
 				<?php
 				if ( $plugin_info->is_fair_plugin() ) {
-					echo '<li class="plugin-meta-item fair-plugin"><strong><span class="screen-reader-text">' . esc_html__( 'Plugin DID:', 'aspireexplorer' ) . '</span>Plugin DID:</strong> <code>' . esc_html( $plugin_did ) . '</code></li>';
+					echo '<li class="plugin-meta-item fair-plugin"><strong>Plugin DID:</strong> <code>' . esc_html( $plugin_did ) . '</code></li>';
 				}
 				?>
 				<?php
@@ -112,7 +112,7 @@ if ( $plugin_info->is_fair_plugin() ) {
 						$value = implode( ', ', $value );
 					}
 					$label = esc_html( ucfirst( str_replace( '_', ' ', $key ) ) );
-					echo '<li class="plugin-meta-item"><strong><span class="screen-reader-text">' . sprintf( esc_html__( '%s:', 'aspireexplorer' ), $label ) . '</span>' . $label . ':</strong> ' . esc_html( $value ) . '</li>';
+					echo '<li class="plugin-meta-item"><strong>' . $label . ':</strong> ' . esc_html( $value ) . '</li>';
 				}
 				?>
 			</ul>
