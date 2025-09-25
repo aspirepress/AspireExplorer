@@ -38,7 +38,6 @@ if ( isset( $sections['description'] ) ) {
 		<div class="entry-title">
 			<h2 class="theme-title"><?php echo esc_html( $theme_info->get_name() ); ?></h2>
 			<p class="theme-author">by <?php echo esc_html( $theme_info->get_author( 'display_name' ) ); ?></p>
-			<p class="theme-version">Version: <?php echo esc_html( $theme_info->get_version() ); ?></p>
 		</div>
 		<div class="entry-preview">
 			<?php
