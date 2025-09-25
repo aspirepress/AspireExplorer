@@ -37,7 +37,6 @@ if ( $plugin_info->is_fair_plugin() ) {
 		<div class="entry-title">
 			<h2 class="plugin-title"><?php echo esc_html( $plugin_info->get_name() ); ?></h2>
 			<p class="plugin-author">by <?php echo esc_html( $plugin_info->get_author( 'display_name' ) ); ?></p>
-			<p class="plugin-version">Version: <?php echo esc_html( $plugin_info->get_version() ); ?></p>
 			<?php
 			if ( $plugin_info->is_fair_plugin() ) {
 				echo '<p class="plugin-fair">' . esc_html__( 'This plugin is available via FAIR repository.', 'aspireexplorer' ) . '</p>';
