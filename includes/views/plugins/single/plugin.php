@@ -31,7 +31,7 @@ if ( $plugin_info->is_fair_plugin() ) {
 ?>
 <main class="single-plugin-card">
 	<banner class="entry-banner">
-		<img class="plugin-banner" src="<?php echo esc_url( $banner_url ); ?>" alt="Plugin Banner">
+		<img class="plugin-banner" src="<?php echo esc_url( $banner_url ); ?>" alt="Plugin Banner" fetchpriority="high">
 	</banner>
 	<header class="entry-header">
 		<div class="entry-title">
