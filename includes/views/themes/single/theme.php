@@ -92,7 +92,7 @@ if ( isset( $sections['description'] ) ) {
 			}
 			?>
 		</article>
-		<sidebar>
+		<aside aria-label="<?php esc_attr_e( 'Theme Metadata', 'aspireexplorer' ); ?>">
 			<ul>
 				<?php
 				$meta_data = [
@@ -153,6 +153,6 @@ if ( isset( $sections['description'] ) ) {
 					?>
 				</ul>
 			</div>
-		</sidebar>
+		</aside>
 	</div>
 </main>
