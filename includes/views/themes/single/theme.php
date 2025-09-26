@@ -32,7 +32,7 @@ if ( isset( $sections['description'] ) ) {
 ?>
 <main class="single-theme-card">
 	<banner class="entry-banner">
-		<img class="theme-banner" src="<?php echo esc_url( $theme_screenshot ); ?>" alt="Theme Banner">
+		<img class="theme-banner" src="<?php echo esc_url( $theme_screenshot ); ?>" alt="Theme Banner" fetchpriority="high">
 	</banner>
 	<header class="entry-header">
 		<div class="entry-title">
