@@ -44,7 +44,7 @@ if ( $plugin_info->is_fair_plugin() ) {
 			?>
 		</div>
 		<div class="entry-download">
-			<a href="<?php echo esc_url( $plugin_info->get_download_link() ); ?>" class="button button-primary" target="_blank" rel="noopener noreferrer"><span class="dashicons dashicons-download"></span> Download</a>
+			<a href="<?php echo esc_url( $plugin_info->get_download_link() ); ?>" class="button button-primary" download rel="noopener noreferrer"><span class="dashicons dashicons-download"></span> Download</a>
 		</div>
 	</header>
 	<div class="entry-main">

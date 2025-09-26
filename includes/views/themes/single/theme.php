@@ -55,7 +55,7 @@ if ( isset( $sections['description'] ) ) {
 			</a>
 		</div>
 		<div class="entry-download">
-			<a href="<?php echo esc_url( $theme_info->get_download_link() ); ?>" class="button button-primary" target="_blank" rel="noopener noreferrer"><span class="dashicons dashicons-download"></span> <?php esc_html_e( 'Download', 'aspireexplorer' ); ?></a>
+			<a href="<?php echo esc_url( $theme_info->get_download_link() ); ?>" class="button button-primary" download rel="noopener noreferrer"><span class="dashicons dashicons-download"></span> <?php esc_html_e( 'Download', 'aspireexplorer' ); ?></a>
 		</div>
 	</header>
 	<div class="entry-main">
