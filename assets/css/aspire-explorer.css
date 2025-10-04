@@ -1598,19 +1598,19 @@
   line-height: 1.7;
   color: #222;
 }
-.single-plugin-card .entry-main sidebar,
-.single-theme-card .entry-main sidebar {
+.single-plugin-card .entry-main aside,
+.single-theme-card .entry-main aside {
   flex: 0 0 410px;
   max-width: 100%;
 }
-.single-plugin-card .entry-main sidebar ul,
-.single-theme-card .entry-main sidebar ul {
+.single-plugin-card .entry-main aside ul,
+.single-theme-card .entry-main aside ul {
   list-style: none;
   padding: 0;
   margin: 0 0 30px;
 }
-.single-plugin-card .entry-main sidebar ul li,
-.single-theme-card .entry-main sidebar ul li {
+.single-plugin-card .entry-main aside ul li,
+.single-theme-card .entry-main aside ul li {
   margin: 0 0 3px;
   padding: 10px;
   background: #f5f5f5;
@@ -1618,32 +1618,32 @@
   text-align: right;
   text-transform: capitalize;
 }
-.single-plugin-card .entry-main sidebar ul li a,
-.single-theme-card .entry-main sidebar ul li a {
+.single-plugin-card .entry-main aside ul li a,
+.single-theme-card .entry-main aside ul li a {
   color: #333;
   text-decoration: none;
   font-weight: bold;
 }
-.single-plugin-card .entry-main sidebar ul li a:hover,
-.single-theme-card .entry-main sidebar ul li a:hover {
+.single-plugin-card .entry-main aside ul li a:hover,
+.single-theme-card .entry-main aside ul li a:hover {
   color: #6eb9e3;
 }
-.single-plugin-card .entry-main sidebar ul li strong,
-.single-theme-card .entry-main sidebar ul li strong {
+.single-plugin-card .entry-main aside ul li strong,
+.single-theme-card .entry-main aside ul li strong {
   float: left;
   max-width: 50%;
   font-weight: 600;
 }
-.single-plugin-card .entry-main sidebar ul li code,
-.single-theme-card .entry-main sidebar ul li code {
+.single-plugin-card .entry-main aside ul li code,
+.single-theme-card .entry-main aside ul li code {
   font-family: monospace, monospace;
   background: #e0e0e0;
   padding: 2px 4px;
   border-radius: 3px;
   font-size: 0.95em;
 }
-.single-plugin-card .entry-main sidebar .ratings,
-.single-theme-card .entry-main sidebar .ratings {
+.single-plugin-card .entry-main aside .ratings,
+.single-theme-card .entry-main aside .ratings {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -1652,22 +1652,22 @@
   font-size: 1em;
   color: #222;
 }
-.single-plugin-card .entry-main sidebar .ratings .rating-summary,
-.single-theme-card .entry-main sidebar .ratings .rating-summary {
+.single-plugin-card .entry-main aside .ratings .rating-summary,
+.single-theme-card .entry-main aside .ratings .rating-summary {
   font-size: 1.15em;
   font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 18px;
   text-align: left;
 }
-.single-plugin-card .entry-main sidebar .ratings .ratings-list,
-.single-theme-card .entry-main sidebar .ratings .ratings-list {
+.single-plugin-card .entry-main aside .ratings .ratings-list,
+.single-theme-card .entry-main aside .ratings .ratings-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.single-plugin-card .entry-main sidebar .ratings .rating-row,
-.single-theme-card .entry-main sidebar .ratings .rating-row {
+.single-plugin-card .entry-main aside .ratings .rating-row,
+.single-theme-card .entry-main aside .ratings .rating-row {
   display: flex;
   align-items: center;
   gap: 0;
@@ -1677,23 +1677,23 @@
   background: none;
   border-radius: 0;
 }
-.single-plugin-card .entry-main sidebar .ratings .rating-count,
-.single-theme-card .entry-main sidebar .ratings .rating-count {
+.single-plugin-card .entry-main aside .ratings .rating-count,
+.single-theme-card .entry-main aside .ratings .rating-count {
   display: none;
 }
-.single-plugin-card .entry-main sidebar .ratings .dashicons,
-.single-theme-card .entry-main sidebar .ratings .dashicons {
+.single-plugin-card .entry-main aside .ratings .dashicons,
+.single-theme-card .entry-main aside .ratings .dashicons {
   font-size: 1.1em;
   color: #ffb900;
   margin-right: 0;
   vertical-align: middle;
 }
-.single-plugin-card .entry-main sidebar .ratings .dashicons.dashicons-star-empty,
-.single-theme-card .entry-main sidebar .ratings .dashicons.dashicons-star-empty {
+.single-plugin-card .entry-main aside .ratings .dashicons.dashicons-star-empty,
+.single-theme-card .entry-main aside .ratings .dashicons.dashicons-star-empty {
   color: #e0e0e0;
 }
-.single-plugin-card .entry-main sidebar .ratings .rating-bar,
-.single-theme-card .entry-main sidebar .ratings .rating-bar {
+.single-plugin-card .entry-main aside .ratings .rating-bar,
+.single-theme-card .entry-main aside .ratings .rating-bar {
   flex: 1 1 80px;
   height: 10px;
   background: #f1f1f1;
@@ -1705,29 +1705,29 @@
   max-width: 160px;
   display: block;
 }
-.single-plugin-card .entry-main sidebar .ratings .rating-bar .rating-bar-inner,
-.single-theme-card .entry-main sidebar .ratings .rating-bar .rating-bar-inner {
+.single-plugin-card .entry-main aside .ratings .rating-bar .rating-bar-inner,
+.single-theme-card .entry-main aside .ratings .rating-bar .rating-bar-inner {
   display: block;
   height: 100%;
   background: linear-gradient(90deg, #6eb9e3 0%, #4fa3d1 100%);
   border-radius: 5px;
   transition: width 0.3s;
 }
-.single-plugin-card .entry-main sidebar .ratings .rating-absolute,
-.single-theme-card .entry-main sidebar .ratings .rating-absolute {
+.single-plugin-card .entry-main aside .ratings .rating-absolute,
+.single-theme-card .entry-main aside .ratings .rating-absolute {
   margin-left: 10px;
   font-size: 0.98em;
   color: #666;
   white-space: nowrap;
 }
-.single-plugin-card .entry-main sidebar .entry-tags,
-.single-theme-card .entry-main sidebar .entry-tags {
+.single-plugin-card .entry-main aside .entry-tags,
+.single-theme-card .entry-main aside .entry-tags {
   margin-bottom: 32px;
 }
-.single-plugin-card .entry-main sidebar .entry-tags ul.plugin-tags,
-.single-plugin-card .entry-main sidebar .entry-tags ul.theme-tags,
-.single-theme-card .entry-main sidebar .entry-tags ul.plugin-tags,
-.single-theme-card .entry-main sidebar .entry-tags ul.theme-tags {
+.single-plugin-card .entry-main aside .entry-tags ul.plugin-tags,
+.single-plugin-card .entry-main aside .entry-tags ul.theme-tags,
+.single-theme-card .entry-main aside .entry-tags ul.plugin-tags,
+.single-theme-card .entry-main aside .entry-tags ul.theme-tags {
   display: flex;
   flex-flow: wrap;
   gap: 8px;
@@ -1735,14 +1735,14 @@
   padding: 0;
   list-style: none;
 }
-.single-plugin-card .entry-main sidebar .entry-tags ul.plugin-tags .plugin-tag,
-.single-plugin-card .entry-main sidebar .entry-tags ul.plugin-tags .theme-tag,
-.single-plugin-card .entry-main sidebar .entry-tags ul.theme-tags .plugin-tag,
-.single-plugin-card .entry-main sidebar .entry-tags ul.theme-tags .theme-tag,
-.single-theme-card .entry-main sidebar .entry-tags ul.plugin-tags .plugin-tag,
-.single-theme-card .entry-main sidebar .entry-tags ul.plugin-tags .theme-tag,
-.single-theme-card .entry-main sidebar .entry-tags ul.theme-tags .plugin-tag,
-.single-theme-card .entry-main sidebar .entry-tags ul.theme-tags .theme-tag {
+.single-plugin-card .entry-main aside .entry-tags ul.plugin-tags .plugin-tag,
+.single-plugin-card .entry-main aside .entry-tags ul.plugin-tags .theme-tag,
+.single-plugin-card .entry-main aside .entry-tags ul.theme-tags .plugin-tag,
+.single-plugin-card .entry-main aside .entry-tags ul.theme-tags .theme-tag,
+.single-theme-card .entry-main aside .entry-tags ul.plugin-tags .plugin-tag,
+.single-theme-card .entry-main aside .entry-tags ul.plugin-tags .theme-tag,
+.single-theme-card .entry-main aside .entry-tags ul.theme-tags .plugin-tag,
+.single-theme-card .entry-main aside .entry-tags ul.theme-tags .theme-tag {
   font-size: 0.85em;
   padding: 3px 9px 4px;
   border-radius: 4px;
@@ -1775,14 +1775,14 @@
     max-width: 100%;
     width: 100%;
   }
-  .single-plugin-card .entry-main sidebar,
-  .single-theme-card .entry-main sidebar {
+  .single-plugin-card .entry-main aside,
+  .single-theme-card .entry-main aside {
     flex: 1;
     max-width: 100%;
     width: 100%;
   }
-  .single-plugin-card .entry-main sidebar ul li,
-  .single-theme-card .entry-main sidebar ul li {
+  .single-plugin-card .entry-main aside ul li,
+  .single-theme-card .entry-main aside ul li {
     padding: 7px;
     font-size: 0.97em;
   }
@@ -1819,8 +1819,8 @@
   .single-theme-card .entry-main article {
     margin: 0 0 12px;
   }
-  .single-plugin-card .entry-main sidebar ul li,
-  .single-theme-card .entry-main sidebar ul li {
+  .single-plugin-card .entry-main aside ul li,
+  .single-theme-card .entry-main aside ul li {
     padding: 5px;
     font-size: 0.96em;
   }
