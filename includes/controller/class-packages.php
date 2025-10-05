@@ -124,7 +124,7 @@ class Packages {
 	public function the_posts( $posts, $wp_query ) {
 
 		// Is this a single package query?
-		if ( isset( $wp_query->query['plugin_slug'] ) || isset( $wp_query->query['theme_slug'] ) ) {
+		if ( isset( $wp_query->query[ $this->asset_slug_var ] ) )  {
 			// If we have a post and it is our packages page: add a filterable placeholder for the post title.
 			if (! empty( $posts ) && $this->target_page_slug === $posts[0]->post_name ) {
 				$posts[0]->post_title = 'Plugins: {single-package-title}';
