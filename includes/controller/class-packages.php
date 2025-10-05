@@ -55,6 +55,7 @@ class Packages {
 
 		add_filter( 'init', [ $this, 'init_permalinks' ] );
 		add_action( 'pre_get_posts', [ $this, 'pre_get_posts' ] );
+		add_action( 'the_posts', [ $this, 'the_posts' ], 10, 2 );
 		add_action( 'wp', [ $this, 'wp' ] );
 		add_filter( 'query_vars', [ $this, 'query_vars' ] );
 		add_filter( 'pre_get_document_title', [ $this, 'pre_get_document_title' ], 9999, 1 );
@@ -114,6 +115,23 @@ class Packages {
 			// If WP might try to redirect to canonical URL for the target page, disable it for this request
 			add_filter( 'redirect_canonical', '__return_false' );
 		}
+	}
+
+
+	/**
+	 * Set placeholders on single package query results.
+	 */
+	public function the_posts( $posts, $wp_query ) {
+
+		// Is this a single package query?
+		if ( isset( $wp_query->query['plugin_slug'] ) || isset( $wp_query->query['theme_slug'] ) ) {
+			// If we have a post and it is our packages page: add a filterable placeholder for the post title.
+			if (! empty( $posts ) && $this->target_page_slug === $posts[0]->post_name ) {
+				$posts[0]->post_title = 'Plugins: {single-package-title}';
+			}
+		}
+
+		return $posts;
 	}
 
 	/**
@@ -198,7 +216,7 @@ class Packages {
 
 		$asset_slug = get_query_var( $this->asset_slug_var );
 		if ( ! empty( $asset_slug ) && isset( $this->api_response->name ) ) {
-			return $this->api_response->name;
+			return str_replace( '{single-package-title}', $this->api_response->name, $title );
 		}
 
 		return $title;
