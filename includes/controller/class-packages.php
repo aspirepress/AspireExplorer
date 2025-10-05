@@ -127,7 +127,7 @@ class Packages {
 		if ( isset( $wp_query->query[ $this->asset_slug_var ] ) )  {
 			// If we have a post and it is our packages page: add a filterable placeholder for the post title.
 			if (! empty( $posts ) && $this->target_page_slug === $posts[0]->post_name ) {
-				$posts[0]->post_title = 'Plugins: {single-package-title}';
+				$posts[0]->post_title = $posts[0]->post_title . ': {single-package-title}';
 			}
 		}
 
