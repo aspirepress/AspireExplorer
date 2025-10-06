@@ -192,6 +192,10 @@ class Packages {
 	 * Filter the_title for asset page.
 	 */
 	public function the_title( $title ) {
+		if ( ! in_the_loop() ) {
+			return $title;
+		}
+
 		if ( ! is_page( $this->target_page_slug ) ) {
 			return $title;
 		}
