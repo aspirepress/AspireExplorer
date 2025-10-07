@@ -74,7 +74,7 @@ if ( $plugin_info->is_fair_plugin() ) {
 		<p class="entry-download">
 			<a href="<?php echo esc_url( $plugin_info->get_download_link() ); ?>"
 				class="button button-primary"
-				target="_blank"
+				download
 				rel="noopener noreferrer"
 				aria-label="<?php esc_attr_e( 'Download', 'aspireexplorer' ); ?> <?php echo esc_attr( $plugin_info->get_name() ); ?> <?php esc_attr_e( 'plugin', 'aspireexplorer' ); ?>">
 				<span class="dashicons dashicons-download" aria-hidden="true"></span>

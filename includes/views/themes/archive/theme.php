@@ -71,7 +71,7 @@ if ( empty( $theme_screenshot ) ) {
 		<p class="entry-download">
 			<a href="<?php echo esc_url( $theme_info->get_download_link() ); ?>"
 				class="button button-primary"
-				target="_blank"
+				download
 				rel="noopener noreferrer">
 				<span class="dashicons dashicons-download" aria-hidden="true"></span>
 				<?php esc_html_e( 'Download', 'aspireexplorer' ); ?>
