@@ -11,7 +11,7 @@
  * Plugin Name:       AspireExplorer
  * Plugin URI:        https://aspirepress.org/
  * Description:       AspirePress Repository browser.
- * Version:           0.1.2
+ * Version:           0.2.0
  * Author:            AspirePress
  * Author URI:        https://docs.aspirepress.org/aspireexplorer/
  * Requires at least: 5.3
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'AE_VERSION' ) ) {
-	define( 'AE_VERSION', '0.1.2' );
+	define( 'AE_VERSION', '0.2.0' );
 }
 
 
