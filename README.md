@@ -1,5 +1,7 @@
 # AspireExplorer
 
+Development on this repository has been moved to https://github.com/fairpm/fair-explorer.  The code provided here is only for archival purpose.
+
 A WordPress plugin that provides a comprehensive repository browser for exploring and managing WordPress plugins and themes from the AspirePress ecosystem.
 
 ## Features
